@@ -39,6 +39,9 @@
         visibility: hidden;
         pointer-events: none;
       }
+      .slide.is-disabled {
+        display: none !important;
+      }
       .slide.active {
         opacity: 1;
         visibility: visible;
@@ -2549,7 +2552,7 @@
             ><span class="pg">10 / 29</span>
           </div>
         </section>
-        <section class="slide dark">
+        <section class="slide dark is-disabled">
           <div class="c-top">
             <span class="idx l">§ 09 · A Solução</span>
             <span class="idx r">TaxaJurosPro em uma frase</span>
@@ -4179,7 +4182,7 @@
             ><span class="pg">18 / 29</span>
           </div>
         </section>
-        <section class="slide paper">
+        <section class="slide paper is-disabled">
           <div class="wm"></div>
           <div class="c-top" style="position: relative; z-index: 1">
             <span class="idx l">Aprofundamento técnico</span>
@@ -7160,7 +7163,7 @@
       (function () {
         var cur = 0;
         var slides = Array.prototype.slice.call(
-          document.querySelectorAll(".slide"),
+          document.querySelectorAll(".slide:not(.is-disabled)"),
         );
         var total = slides.length;
         var counter = document.getElementById("counter");
