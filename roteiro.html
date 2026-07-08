@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Roteiro de Defesa — TaxaJurosPro</title>
+<style>
+@page { margin: 0; }
+body {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000;
+  margin: 0;
+  padding: 40px 55px;
+}
+h1 { font-size: 26px; margin: 0 0 4px; }
+h2 { font-size: 18px; margin: 22px 0 10px; }
+h2 .tempo { font-size: 13px; font-weight: normal; }
+p { margin: 0 0 12px; }
+p.nota { font-size: 13px; margin: 2px 0; }
+.pausa { font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Roteiro de Defesa — TaxaJurosPro</h1>
+<p class="nota">Alinhado 1:1 com os 29 slides do index.html, na ordem exata da apresentação.</p>
+<p class="nota">Tempo-alvo total: 25 a 30 minutos.</p>
+<p class="nota"><span class="pausa">[ pausa ]</span> = pequena pausa para respirar e não se perder na leitura.</p>
+<section class="slide">
+<h2>Slide 1 — Capa / Abertura<span class="tempo">≈ 1 min</span></h2>
+<p>Bom dia. <span class="pausa">[ pausa ]</span></p>
+<p>Antes de iniciar, gostaria de agradecer aos professores da banca pelo tempo dedicado à avaliação deste trabalho. <span class="pausa">[ pausa ]</span> É uma satisfação poder apresentar o resultado desta pesquisa e compartilhar com os senhores um projeto que reuniu conhecimentos de engenharia de software, desenvolvimento web, sistemas de informação e educação financeira. <span class="pausa">[ pausa ]</span></p>
+<p>Meu nome é Kossi Sedjro Mawuli Dominique Houessou <span class="pausa">[ pausa ]</span> e o trabalho que apresento hoje tem como título &quot;TaxaJurosPro: Desenvolvimento de um Sistema Web para Redução da Assimetria Informacional no Mercado de Crédito Brasileiro por meio da Integração com Dados Abertos do Banco Central&quot;, <span class="pausa">[ pausa ]</span> desenvolvido sob orientação do Dr. Thiago Iachiley Araújo de Souza. <span class="pausa">[ pausa ]</span></p>
+<p>Durante esta apresentação, vou mostrar como dados públicos, que atualmente são pouco acessíveis para a maioria da população, podem ser transformados em uma ferramenta prática para apoiar decisões financeiras mais conscientes. <span class="pausa">[ pausa ]</span> Também apresentarei a fundamentação teórica da pesquisa, as decisões de desenvolvimento adotadas, a validação realizada e os principais resultados obtidos.</p>
+</section>
+<section class="slide">
+<h2>Slide 2 — Sumário · O percurso da apresentação<span class="tempo">≈ 1 min</span></h2>
+<p>Antes de entrarmos no desenvolvimento do trabalho, gostaria de apresentar rapidamente o percurso que seguiremos durante esta defesa. <span class="pausa">[ pausa ]</span></p>
+<p>Estruturei a apresentação em cinco momentos, cada um respondendo a uma pergunta importante da pesquisa. <span class="pausa">[ pausa ]</span></p>
+<p>No primeiro ato, &quot;A Tensão&quot;, vou mostrar qual foi o problema que motivou este trabalho e por que ele merece atenção. Veremos que existe um paradoxo: os dados sobre taxas de juros são públicos, mas continuam pouco acessíveis para a maior parte da população. <span class="pausa">[ pausa ]</span></p>
+<p>Em seguida, em &quot;O Enquadramento&quot;, apresentarei a fundamentação teórica que sustenta a pesquisa, abordando conceitos como assimetria informacional, dados abertos e Design Science Research, que orientou o desenvolvimento da solução. <span class="pausa">[ pausa ]</span></p>
+<p>No terceiro momento, &quot;A Solução&quot;, mostrarei o TaxaJurosPro, sua arquitetura, os requisitos definidos e as funcionalidades implementadas. <span class="pausa">[ pausa ]</span></p>
+<p>Depois, em &quot;A Prova&quot;, apresentarei como o sistema foi validado, incluindo os testes técnicos e a avaliação de usabilidade com usuários, além das limitações identificadas durante a pesquisa. <span class="pausa">[ pausa ]</span></p>
+<p>Por fim, em &quot;O Fechamento&quot;, retomarei os objetivos do trabalho, apresentarei as contribuições alcançadas e discutirei possíveis evoluções futuras. <span class="pausa">[ pausa ]</span></p>
+<p>Ao longo de toda a apresentação, buscarei demonstrar a tese central desta pesquisa: que transformar dados abertos em informação acessível é não apenas tecnicamente viável, mas também socialmente relevante.</p>
+</section>
+<section class="slide">
+<h2>Slide 3 — § 01 · A Tensão · O paradoxo do crédito brasileiro<span class="tempo">≈ 1 min 10 s</span></h2>
+<p>Gostaria de começar apresentando o problema central desta pesquisa. <span class="pausa">[ pausa ]</span></p>
+<p>Hoje vivemos uma situação bastante curiosa. O Banco Central do Brasil disponibiliza gratuitamente uma enorme quantidade de informações sobre o mercado de crédito. São centenas de instituições financeiras, diversas modalidades de empréstimo e milhares de registros atualizados periodicamente. <span class="pausa">[ pausa ]</span></p>
+<p>Ou seja, do ponto de vista da transparência pública, essas informações existem e estão disponíveis para qualquer pessoa. <span class="pausa">[ pausa ]</span></p>
+<p>Entretanto, existe um paradoxo. <span class="pausa">[ pausa ]</span> Embora os dados sejam públicos, eles permanecem praticamente inacessíveis para o cidadão comum. Isso acontece porque são disponibilizados em um formato essencialmente técnico, por meio de uma API baseada no padrão OData, retornando arquivos JSON que exigem conhecimento de programação para serem consultados e interpretados. <span class="pausa">[ pausa ]</span></p>
+<p>Na prática, a transparência existe para quem possui conhecimento técnico, mas não necessariamente para quem realmente precisa utilizar essas informações para tomar decisões financeiras. <span class="pausa">[ pausa ]</span></p>
+<p>Foi justamente essa distância entre a existência do dado público e sua utilização efetiva que motivou o desenvolvimento deste trabalho.</p>
+</section>
+<section class="slide">
+<h2>Slide 4 — § 02 · A Tensão · Três números tornam o problema irrefutável<span class="tempo">≈ 1 min 10 s</span></h2>
+<p>Para compreender melhor a importância desse problema, gostaria de destacar três números provenientes de fontes oficiais do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>O primeiro é o volume do mercado de crédito brasileiro destinado às famílias, que ultrapassa 4 trilhões de reais. Estamos falando de um dos maiores mercados da economia nacional. <span class="pausa">[ pausa ]</span></p>
+<p>O segundo dado está relacionado ao letramento financeiro. Segundo estudos do próprio Banco Central e da OCDE, o índice médio de educação financeira da população brasileira ainda está distante do ideal, indicando dificuldades para compreender conceitos básicos relacionados ao crédito e aos juros. <span class="pausa">[ pausa ]</span></p>
+<p>O terceiro dado é ainda mais preocupante. Uma parcela muito pequena da população consegue realizar corretamente cálculos simples envolvendo juros. Isso significa que, mesmo quando as informações estão disponíveis, muitas pessoas não conseguem interpretá-las adequadamente para comparar diferentes opções de crédito. <span class="pausa">[ pausa ]</span></p>
+<p>Esses números mostram que o problema não está apenas na disponibilidade dos dados, mas principalmente na forma como eles chegam ao usuário final. <span class="pausa">[ pausa ]</span> E foi exatamente essa lacuna que o TaxaJurosPro buscou preencher.</p>
+</section>
+<section class="slide">
+<h2>Slide 5 — § 03 · A Tensão · Pergunta de pesquisa e objetivo geral<span class="tempo">≈ 1 min</span></h2>
+<p>Diante desse cenário, surgiu a seguinte pergunta de pesquisa: <span class="pausa">[ pausa ]</span></p>
+<p>Como uma plataforma web integrada à API de dados abertos do Banco Central pode auxiliar pessoas físicas a comparar taxas de juros e tomar decisões mais informadas sobre operações de crédito, contribuindo para reduzir a assimetria informacional existente nesse mercado? <span class="pausa">[ pausa ]</span></p>
+<p>Para responder a essa pergunta, defini como objetivo geral desenvolver uma plataforma web capaz de consumir automaticamente os dados oficiais do Banco Central, processá-los e apresentá-los de forma simples, intuitiva e útil ao usuário. <span class="pausa">[ pausa ]</span></p>
+<p>A partir desse objetivo geral foram estabelecidos os objetivos específicos, que envolveram desde a integração com a API oficial até a implementação das funcionalidades de consulta, comparação e simulação de crédito, além da validação técnica e da avaliação de usabilidade da solução desenvolvida. <span class="pausa">[ pausa ]</span></p>
+<p>Ao longo da apresentação, mostrarei como cada um desses objetivos foi efetivamente alcançado e como eles contribuíram para responder à pergunta que motivou esta pesquisa.</p>
+</section>
+<section class="slide">
+<h2>Slide 6 — § 04 · O Enquadramento · O nome técnico da dor: assimetria informacional<span class="tempo">≈ 1 min 20 s</span></h2>
+<p>Antes de apresentar a solução desenvolvida, é importante entender o conceito que fundamenta toda esta pesquisa: a assimetria informacional. <span class="pausa">[ pausa ]</span></p>
+<p>Esse termo descreve uma situação em que duas partes de uma negociação possuem níveis diferentes de informação. No mercado de crédito, isso acontece de forma bastante evidente. <span class="pausa">[ pausa ]</span></p>
+<p>De um lado está o consumidor, que normalmente conhece apenas o valor da parcela ou a taxa apresentada em uma propaganda. Muitas vezes ele não consegue comparar diferentes ofertas nem compreender o impacto dos juros ao longo do tempo. <span class="pausa">[ pausa ]</span></p>
+<p>Do outro lado estão as instituições financeiras, que possuem acesso a uma grande quantidade de informações: modelos de risco, histórico de crédito dos clientes, estatísticas do mercado e conhecimento detalhado sobre seus próprios produtos. <span class="pausa">[ pausa ]</span></p>
+<p>Esse desequilíbrio cria um ambiente em que o consumidor tende a tomar decisões com menos informação do que a instituição financeira. <span class="pausa">[ pausa ]</span></p>
+<p>Esse fenômeno foi estudado inicialmente por George Akerlof, em seu clássico trabalho sobre mercados com informação imperfeita, e posteriormente ampliado por Stiglitz e Weiss para o contexto do mercado de crédito. <span class="pausa">[ pausa ]</span></p>
+<p>O TaxaJurosPro não pretende substituir a decisão do usuário. <span class="pausa">[ pausa ]</span> Seu objetivo é reduzir essa diferença de informação, oferecendo dados oficiais organizados de forma clara para que o consumidor possa tomar decisões mais conscientes.</p>
+</section>
+<section class="slide">
+<h2>Slide 7 — § 05 · O Enquadramento · Dado publicado não é dado apropriado<span class="tempo">≈ 1 min</span></h2>
+<p>Um ponto muito importante desta pesquisa é compreender que publicar dados não significa necessariamente torná-los acessíveis. <span class="pausa">[ pausa ]</span></p>
+<p>Hoje o Banco Central disponibiliza uma enorme quantidade de informações em formato aberto. No entanto, esses dados são distribuídos por meio de uma API técnica, utilizando estruturas como endpoints, parâmetros OData e arquivos JSON. <span class="pausa">[ pausa ]</span></p>
+<p>Para um desenvolvedor, isso é relativamente simples. Mas para a maioria da população, esse formato é completamente inacessível. <span class="pausa">[ pausa ]</span></p>
+<p>Existe, portanto, uma barreira entre o dado publicado e o conhecimento efetivamente utilizado pelo cidadão. <span class="pausa">[ pausa ]</span></p>
+<p>Diversos autores que estudam dados abertos afirmam exatamente isso: disponibilizar informação é apenas o primeiro passo. É necessário transformá-la em algo compreensível, útil e capaz de apoiar decisões. <span class="pausa">[ pausa ]</span></p>
+<p>Foi justamente essa transformação que procurei realizar neste trabalho. Em outras palavras, o TaxaJurosPro funciona como uma camada intermediária entre os dados técnicos do Banco Central e o usuário final, convertendo registros complexos em informações claras, comparáveis e acionáveis.</p>
+</section>
+<section class="slide">
+<h2>Slide 8 — § 06 · O Enquadramento · Que tipo de dado aberto o sistema usa<span class="tempo">Dados Abertos × Open Finance) (≈ 1 min</span></h2>
+<p>Neste ponto, gostaria de esclarecer uma distinção importante, porque é uma dúvida bastante comum. <span class="pausa">[ pausa ]</span> Muitas pessoas confundem Dados Abertos com Open Finance, mas são iniciativas completamente diferentes. <span class="pausa">[ pausa ]</span></p>
+<p>O TaxaJurosPro utiliza exclusivamente dados abertos do Banco Central. Esses dados são públicos, agregados e podem ser acessados por qualquer pessoa sem necessidade de autenticação, cadastro ou autorização do usuário. <span class="pausa">[ pausa ]</span></p>
+<p>Já o Open Finance trabalha com informações individuais dos clientes. Nesse modelo, os dados bancários pertencem ao usuário e só podem ser compartilhados mediante seu consentimento explícito. <span class="pausa">[ pausa ]</span></p>
+<p>Portanto, em nenhum momento o TaxaJurosPro acessa informações pessoais, contas bancárias, saldos, extratos ou qualquer dado sensível. <span class="pausa">[ pausa ]</span></p>
+<p>Toda a aplicação trabalha apenas com informações públicas disponibilizadas oficialmente pelo Banco Central, garantindo simplicidade de utilização e respeito à privacidade dos usuários.</p>
+</section>
+<section class="slide">
+<h2>Slide 9 — § 07 · O Enquadramento · Mais que um sistema: ferramenta de política pública<span class="tempo">≈ 1 min</span></h2>
+<p>Além do aspecto tecnológico, este trabalho também possui uma dimensão social. <span class="pausa">[ pausa ]</span> A proposta está alinhada com iniciativas governamentais voltadas para educação financeira e transparência pública. <span class="pausa">[ pausa ]</span></p>
+<p>Ao transformar dados técnicos em informações compreensíveis, o sistema contribui para aproximar o cidadão das informações produzidas pelo próprio Estado. <span class="pausa">[ pausa ]</span></p>
+<p>Isso vai ao encontro da Estratégia Nacional de Educação Financeira, que incentiva o desenvolvimento de ferramentas capazes de melhorar o conhecimento financeiro da população. <span class="pausa">[ pausa ]</span></p>
+<p>Da mesma forma, a pesquisa dialoga com os Objetivos de Desenvolvimento Sustentável da Agenda 2030, especialmente aqueles relacionados à redução das desigualdades, à promoção do trabalho decente e ao fortalecimento das instituições. <span class="pausa">[ pausa ]</span></p>
+<p>Embora seja uma aplicação tecnológica, seu impacto potencial vai além da engenharia de software, pois busca facilitar o acesso da população a informações relevantes para decisões financeiras do cotidiano.</p>
+</section>
+<section class="slide">
+<h2>Slide 10 — § 08 · O Enquadramento · Design Science: o artefato como contribuição<span class="tempo">≈ 1 min 20 s</span></h2>
+<p>Passando agora para a metodologia, a pesquisa foi conduzida utilizando a abordagem Design Science Research, bastante utilizada em Sistemas de Informação quando o objetivo é desenvolver um artefato tecnológico para resolver um problema real. <span class="pausa">[ pausa ]</span></p>
+<p>Diferentemente de pesquisas puramente descritivas ou experimentais, na Design Science o principal resultado científico é justamente o artefato desenvolvido. <span class="pausa">[ pausa ]</span> Ou seja, neste trabalho, a contribuição científica não é apenas discutir a assimetria informacional ou analisar dados do mercado de crédito. A principal contribuição é o desenvolvimento, a implementação e a validação de uma solução capaz de enfrentar esse problema na prática. <span class="pausa">[ pausa ]</span></p>
+<p>O processo iniciou com o levantamento bibliográfico e documental, seguido pela identificação dos requisitos do sistema, desenvolvimento incremental da aplicação, validação técnica e, por fim, pela avaliação de usabilidade com usuários reais. <span class="pausa">[ pausa ]</span></p>
+<p>À direita, posiciono o trabalho frente à literatura. <span class="pausa">[ pausa ]</span> Nascimento e colaboradores, em 2021, fizeram uma comparação entre instituições, porém de forma manual, consultando sites; o TaxaJurosPro automatiza essa comparação consumindo diretamente a API do Banco Central. <span class="pausa">[ pausa ]</span> Ornelas e Pécora, em um Working Paper do próprio Banco Central de 2022, estudaram o impacto das fintechs no crédito; a diferença é que o meu trabalho entrega uma ferramenta voltada diretamente ao consumidor final. <span class="pausa">[ pausa ]</span> Caciatori Junior, em 2020, analisou a concentração e a competitividade bancária em nível macro; o TaxaJurosPro desce ao nível prático, permitindo a comparação granular entre instituições. <span class="pausa">[ pausa ]</span> E Freitas e Reis, em 2022, propuseram uma plataforma de educação financeira, mas em caráter conceitual; aqui a proposta é uma implementação real, funcional, com dados oficiais. <span class="pausa">[ pausa ]</span></p>
+<p>Ou seja, durante a revisão da literatura não identifiquei nenhum comparador de taxas voltado ao cidadão que utilizasse os dados abertos do Banco Central. É justamente nessa lacuna que o TaxaJurosPro se posiciona: não se limita a análises conceituais ou protótipos, mas entrega uma aplicação funcional, em produção e alimentada continuamente por dados oficiais.</p>
+</section>
+<section class="slide">
+<h2>Slide 11 — § 09 · A Solução · TaxaJurosPro em uma frase<span class="tempo">≈ 45 s</span></h2>
+<p>Feita a fundamentação, passo agora à solução propriamente dita. <span class="pausa">[ pausa ]</span></p>
+<p>Se eu tivesse que resumir o TaxaJurosPro em uma única frase, diria que é uma plataforma web que transforma os dados brutos da API do Banco Central em informação acionável para o cidadão. <span class="pausa">[ pausa ]</span></p>
+<p>E, para o usuário, essa transformação se traduz em uma jornada simples de três passos: primeiro descobrir as taxas praticadas no mercado, depois comparar as instituições e, por fim, decidir com base em uma simulação concreta. <span class="pausa">[ pausa ]</span></p>
+<p>Descobrir, comparar e decidir. É em torno dessa jornada que todas as funcionalidades foram organizadas. <span class="pausa">[ pausa ]</span> O sistema, aliás, está publicado e em produção, acessível no endereço taxajurospro.com.br.</p>
+</section>
+<section class="slide">
+<h2>Slide 12 — § 10 · A Solução · Requisitos e processo de desenvolvimento<span class="tempo">≈ 1 min</span></h2>
+<p>Antes de escrever qualquer linha de código, realizei um levantamento estruturado de requisitos, seguindo as boas práticas de engenharia de software descritas por Sommerville. <span class="pausa">[ pausa ]</span></p>
+<p>Os requisitos funcionais definiram o que o sistema deveria fazer: consultar taxas por instituição e modalidade, comparar instituições diretamente, simular empréstimos pelo Sistema Price e espelhar condições de crédito. <span class="pausa">[ pausa ]</span></p>
+<p>Já os requisitos não funcionais trataram de como o sistema deveria se comportar: usabilidade da interface, desempenho no processamento dos dados, acessibilidade em diferentes dispositivos e integração confiável com o serviço externo da API do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>O desenvolvimento seguiu um processo incremental: cada incremento agregou uma funcionalidade e foi validado antes de se avançar para o próximo. Isso reduziu riscos e facilitou correções ao longo do desenvolvimento.</p>
+</section>
+<section class="slide">
+<h2>Slide 13 — § 11 · A Solução · As modalidades de crédito cobertas<span class="tempo">≈ 50 s</span></h2>
+<p>Um ponto importante do trabalho foi delimitar o escopo de cobertura do sistema. <span class="pausa">[ pausa ]</span></p>
+<p>O TaxaJurosPro trabalha com operações de crédito pré-fixadas destinadas a pessoas físicas, com recursos livres, que são justamente as formas de financiamento mais presentes no cotidiano do consumidor. <span class="pausa">[ pausa ]</span></p>
+<p>Na prática, o sistema cobre seis grandes grupos de modalidades: cartão de crédito, nas modalidades rotativo e parcelado; cheque especial; crédito consignado, incluindo INSS, setor público e privado; crédito pessoal não consignado; financiamento de bens, como veículos e eletrônicos; e desconto de cheques. <span class="pausa">[ pausa ]</span></p>
+<p>Esse foi um recorte deliberado: concentrar a solução nas operações que mais afetam o dia a dia das pessoas físicas.</p>
+</section>
+<section class="slide">
+<h2>Slide 14 — § 12 · A Solução · Arquitetura em três camadas<span class="tempo">≈ 1 min</span></h2>
+<p>Nesta etapa apresento a arquitetura utilizada no desenvolvimento. <span class="pausa">[ pausa ]</span></p>
+<p>A aplicação foi organizada em três camadas principais, seguindo o princípio da separação de responsabilidades. <span class="pausa">[ pausa ]</span></p>
+<p>Na camada de apresentação estão os componentes React responsáveis pela interface do usuário, apoiados pelo TanStack Router para a navegação e pelo Tailwind com Radix UI para um design acessível. <span class="pausa">[ pausa ]</span></p>
+<p>Na camada de lógica de negócio encontram-se os hooks customizados, responsáveis pelo processamento dos dados e pelos cálculos financeiros, mantendo as regras de negócio separadas da interface. <span class="pausa">[ pausa ]</span></p>
+<p>Por fim, a camada de acesso aos dados realiza a comunicação com a API do Banco Central utilizando a Fetch API, enquanto o TanStack Query gerencia o cache e a sincronização dos dados. <span class="pausa">[ pausa ]</span></p>
+<p>Essa separação facilita a manutenção, a reutilização de código e a evolução futura do sistema.</p>
+</section>
+<section class="slide">
+<h2>Slide 15 — § 13 · A Solução · Fluxo de dados, da API ao usuário<span class="tempo">≈ 1 min</span></h2>
+<p>Este diagrama mostra o caminho percorrido pelos dados até chegarem ao usuário. <span class="pausa">[ pausa ]</span></p>
+<p>Tudo começa na API oficial do Banco Central, que retorna aproximadamente mil registros contendo informações de pessoas físicas e jurídicas. Esses dados são obtidos utilizando a Fetch API. <span class="pausa">[ pausa ]</span></p>
+<p>Um ponto que merece destaque: como a API deixou de oferecer filtros por categoria durante o desenvolvimento do projeto, a filtragem passou a ser realizada no próprio navegador, do lado do cliente. <span class="pausa">[ pausa ]</span></p>
+<p>Após esse processamento, os dados são armazenados em cache utilizando o TanStack Query e também persistidos no localStorage, para acelerar acessos futuros. <span class="pausa">[ pausa ]</span></p>
+<p>Somente então essas informações são disponibilizadas para as páginas de consulta, comparação e simulação. <span class="pausa">[ pausa ]</span></p>
+<p>Esse fluxo reduz requisições desnecessárias e melhora significativamente o desempenho percebido pelo usuário.</p>
+</section>
+<section class="slide">
+<h2>Slide 16 — Funcionalidade 01 · Descobrir · Consulta de taxas<span class="tempo">≈ 50 s</span></h2>
+<p>Com a arquitetura apresentada, passo agora a demonstrar as funcionalidades, seguindo aquela jornada de descobrir, comparar e decidir. <span class="pausa">[ pausa ]</span></p>
+<p>A primeira funcionalidade é a consulta de taxas. Aqui o sistema reúne todas as instituições reguladas em uma única tabela filtrável. <span class="pausa">[ pausa ]</span></p>
+<p>O usuário seleciona a modalidade de crédito desejada e o sistema exibe, de forma organizada, as taxas praticadas pelas diferentes instituições financeiras, a partir dos dados oficiais do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>O que antes exigia consultar uma API técnica e interpretar arquivos JSON passa a ser uma simples consulta visual, ao alcance de qualquer pessoa.</p>
+</section>
+<section class="slide">
+<h2>Slide 17 — Funcionalidade 02 · Comparar · Comparação entre instituições<span class="tempo">≈ 1 min</span></h2>
+<p>Depois de descobrir as taxas, a segunda funcionalidade do sistema é o comparador de instituições financeiras. <span class="pausa">[ pausa ]</span></p>
+<p>A ideia aqui é simples: permitir que o usuário compare duas instituições para uma mesma modalidade de crédito. <span class="pausa">[ pausa ]</span></p>
+<p>Primeiro, o usuário escolhe o tipo de crédito, por exemplo crédito pessoal não consignado. Em seguida, seleciona duas instituições financeiras disponíveis na base do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>O sistema então apresenta as duas taxas lado a lado e destaca automaticamente qual instituição possui a menor taxa. <span class="pausa">[ pausa ]</span></p>
+<p>Embora a diferença entre duas taxas possa parecer pequena, ela representa um impacto financeiro significativo quando aplicada durante vários meses em um financiamento. <span class="pausa">[ pausa ]</span></p>
+<p>Essa funcionalidade reduz o tempo necessário para comparar ofertas e transforma centenas de registros da API em uma informação objetiva, permitindo que o usuário identifique rapidamente a alternativa mais vantajosa.</p>
+</section>
+<section class="slide">
+<h2>Slide 18 — Funcionalidade 03 · Decidir · Simulador de empréstimos<span class="tempo">≈ 1 min</span></h2>
+<p>A terceira funcionalidade é o simulador de empréstimos, que considero a mais útil para o usuário final. <span class="pausa">[ pausa ]</span></p>
+<p>Depois de escolher a modalidade de crédito, o usuário informa apenas o valor desejado e o número de parcelas. <span class="pausa">[ pausa ]</span></p>
+<p>O sistema utiliza as taxas de cada instituição financeira e aplica o Sistema Price para calcular automaticamente o valor das parcelas. <span class="pausa">[ pausa ]</span></p>
+<p>Os resultados são apresentados ordenados pela menor prestação, permitindo que o usuário visualize imediatamente quais bancos oferecem a condição mais econômica. <span class="pausa">[ pausa ]</span></p>
+<p>Além da parcela mensal, também são apresentados os juros totais pagos durante todo o financiamento. <span class="pausa">[ pausa ]</span></p>
+<p>Assim, o usuário deixa de comparar apenas percentuais de juros e passa a visualizar o impacto financeiro real daquela taxa sobre o seu bolso.</p>
+</section>
+<section class="slide">
+<h2>Slide 19 — Aprofundamento técnico · A matemática por trás do simulador<span class="tempo">≈ 50 s</span></h2>
+<p>Vale detalhar rapidamente a matemática que sustenta o simulador. <span class="pausa">[ pausa ]</span></p>
+<p>O cálculo utiliza o Sistema Price, também conhecido como sistema de amortização francesa. A característica principal desse sistema é a parcela fixa: o valor pago a cada mês permanece constante do início ao fim do financiamento. <span class="pausa">[ pausa ]</span></p>
+<p>Essa parcela fixa embute juros compostos, e sua composição muda ao longo do tempo: no começo, a maior parte da parcela corresponde a juros; ao final, a maior parte corresponde à amortização do valor principal. <span class="pausa">[ pausa ]</span></p>
+<p>Implementar esse motor de cálculo corretamente foi essencial para garantir que as simulações refletissem a realidade das operações de crédito e fossem confiáveis para apoiar a decisão do usuário.</p>
+</section>
+<section class="slide">
+<h2>Slide 20 — Funcionalidade 04 · Continuar · Espelhamento de condições<span class="tempo">≈ 50 s</span></h2>
+<p>A quarta funcionalidade é o espelhamento de condições, que possui um enquadramento jurídico importante. <span class="pausa">[ pausa ]</span></p>
+<p>Ela se apoia na Resolução CMN 4.292, de 2013, que trata da portabilidade de crédito e do direito do consumidor de buscar condições mais vantajosas em outras instituições. <span class="pausa">[ pausa ]</span></p>
+<p>Na prática, essa funcionalidade atua como um mecanismo de descoberta de alternativas: a partir de uma condição de crédito conhecida, o sistema ajuda o usuário a identificar outras instituições que poderiam oferecer condições equivalentes ou melhores. <span class="pausa">[ pausa ]</span></p>
+<p>É uma funcionalidade que conecta a dimensão técnica da solução ao direito real do consumidor de renegociar e migrar seu crédito.</p>
+</section>
+<section class="slide">
+<h2>Slide 21 — § 14 · A Prova · Validação técnica em quatro dimensões<span class="tempo">≈ 1 min</span></h2>
+<p>Após a implementação, iniciou-se a etapa de validação do sistema, organizada em quatro dimensões. <span class="pausa">[ pausa ]</span></p>
+<p>Primeiro, foram realizados testes funcionais para verificar se todas as funcionalidades operavam conforme os requisitos definidos. <span class="pausa">[ pausa ]</span></p>
+<p>Segundo, foi feita a conferência dos dados apresentados na aplicação, comparando-os diretamente com os dados retornados pela API oficial do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>Terceiro, os cálculos financeiros implementados no simulador foram comparados com calculadoras financeiras de referência, apresentando precisão compatível, com diferenças apenas na ordem de centavos, decorrentes de arredondamentos. <span class="pausa">[ pausa ]</span></p>
+<p>E quarto, foram realizados testes de responsividade em diferentes tamanhos de tela e testes de compatibilidade nos navegadores Google Chrome, Mozilla Firefox e Microsoft Edge. <span class="pausa">[ pausa ]</span></p>
+<p>Esses procedimentos permitiram confirmar que o sistema atende aos requisitos técnicos estabelecidos durante a fase de análise.</p>
+</section>
+<section class="slide">
+<h2>Slide 22 — § 15 · A Prova · Avaliação de usabilidade com usuários<span class="tempo">≈ 1 min 10 s</span></h2>
+<p>Além da validação técnica, foi realizada uma avaliação de usabilidade com usuários reais. <span class="pausa">[ pausa ]</span></p>
+<p>Para isso, elaborei um questionário próprio, disponibilizado por meio do Google Forms, com afirmações respondidas em uma escala Likert de cinco pontos, ancorada nos critérios de usabilidade da norma ISO 9241-11. <span class="pausa">[ pausa ]</span></p>
+<p>O questionário foi aplicado a nove participantes, que utilizaram livremente as funcionalidades do TaxaJurosPro antes de responder às dez afirmações da escala. <span class="pausa">[ pausa ]</span></p>
+<p>O resultado foi bastante positivo: a média global foi de 4,77 em 5, com as afirmações variando numa faixa estreita, entre 4,67 e 4,89. Isso indica que os participantes perceberam o sistema como fácil de aprender, intuitivo e simples de utilizar. <span class="pausa">[ pausa ]</span></p>
+<p>É importante esclarecer que optei deliberadamente por um instrumento sob medida, e não pela escala SUS. <span class="pausa">[ pausa ]</span> A escolha se justifica pelo caráter formativo da avaliação nesta etapa: eu queria investigar aspectos específicos da interface do TaxaJurosPro. A aplicação do SUS, com uma amostra maior, está prevista como trabalho futuro. <span class="pausa">[ pausa ]</span></p>
+<p>Embora a amostra seja pequena e não permita generalizações estatísticas, ela fornece evidências iniciais importantes sobre a qualidade da experiência oferecida pela aplicação.</p>
+</section>
+<section class="slide">
+<h2>Slide 23 — § 16 · A Prova · Limitações reconhecidas como escolhas conscientes<span class="tempo">≈ 1 min</span></h2>
+<p>Toda pesquisa tem limites, e nomeá-los faz parte do rigor científico. Organizei as limitações em três grupos. <span class="pausa">[ pausa ]</span></p>
+<p>No método: a amostra de nove participantes é suficiente para revelar problemas de usabilidade, como aponta Nielsen, mas não para generalizar estatisticamente. O recrutamento foi por conveniência, típico de uma avaliação formativa em estágio inicial. E, como comentei, o instrumento foi um questionário próprio, uma escolha deliberada, e não o SUS. <span class="pausa">[ pausa ]</span></p>
+<p>No escopo: o simulador implementa apenas o Sistema Price, ficando o Sistema SAC como trabalho futuro. O Custo Efetivo Total completo, com tarifas e seguros, não foi implementado. E o sistema cobre apenas operações pré-fixadas de pessoa física, com a ampliação para pessoa jurídica prevista no roadmap. <span class="pausa">[ pausa ]</span></p>
+<p>E no processo: a principal limitação foi a dependência de um serviço externo, a API do Banco Central, que mudou de comportamento durante o desenvolvimento. <span class="pausa">[ pausa ]</span></p>
+<p>O ponto central aqui é que essas limitações não foram acidentes: foram recortes conscientes, coerentes com o escopo informacional do trabalho.</p>
+</section>
+<section class="slide">
+<h2>Slide 24 — § 17 · A Prova · O que este trabalho prova, e o que não prova<span class="tempo">≈ 1 min</span></h2>
+<p>Ainda no espírito do rigor científico, é importante ser preciso sobre onde a evidência termina. <span class="pausa">[ pausa ]</span></p>
+<p>O que fica demonstrado é a viabilidade técnica da solução e a percepção de utilidade e clareza por parte dos usuários. A plataforma reduz, de fato, a barreira de acesso e de interpretação dos dados de taxas. <span class="pausa">[ pausa ]</span></p>
+<p>O que este trabalho não afirma é que o uso do sistema conduza, de forma causal, a escolhas economicamente mais vantajosas. Comprovar isso exigiria um estudo longitudinal ou experimental, que está fora do escopo informacional que delimitei. <span class="pausa">[ pausa ]</span></p>
+<p>Em outras palavras, o trabalho responde à dimensão de impacto de maneira indireta: ele cria as condições necessárias para decisões mais informadas, deixando a confirmação empírica desses ganhos como uma investigação futura.</p>
+</section>
+<section class="slide">
+<h2>Slide 25 — § 18 · O Fechamento · Alcance dos objetivos específicos<span class="tempo">≈ 50 s</span></h2>
+<p>Entrando no fechamento, retomo os objetivos específicos apresentados no início da pesquisa, para mostrar que todos os seis foram efetivamente cumpridos. <span class="pausa">[ pausa ]</span></p>
+<p>Foi desenvolvida uma plataforma web funcional, integrada diretamente à API oficial do Banco Central. O sistema permite consultar centenas de instituições financeiras, comparar taxas de diferentes modalidades e simular financiamentos com dados oficiais. <span class="pausa">[ pausa ]</span></p>
+<p>A aplicação apresenta interface responsiva, desempenho satisfatório e mecanismos de cache que reduzem o tempo de carregamento em acessos posteriores. E a avaliação de usabilidade indicou boa aceitação pelos participantes. <span class="pausa">[ pausa ]</span></p>
+<p>Cada objetivo específico definido no início encontrou correspondência direta em uma entrega concreta do sistema.</p>
+</section>
+<section class="slide">
+<h2>Slide 26 — § 19 · O Fechamento · Contribuições em três frentes<span class="tempo">≈ 50 s</span></h2>
+<p>As contribuições deste trabalho se organizam em três frentes. <span class="pausa">[ pausa ]</span></p>
+<p>A primeira é técnica: uma arquitetura de referência para integração com dados abertos governamentais, com decisões de caching e de processamento no lado do cliente que podem ser replicadas em outros contextos. <span class="pausa">[ pausa ]</span></p>
+<p>A segunda é social: ao transformar dados técnicos em informação acessível, o trabalho aproxima o cidadão das informações produzidas pelo Estado e contribui para a educação financeira. <span class="pausa">[ pausa ]</span></p>
+<p>A terceira é acadêmica: um estudo de caso completo, documentado sob a ótica da Design Science, indo do levantamento de requisitos até o artefato validado, servindo de base para estudos futuros.</p>
+</section>
+<section class="slide">
+<h2>Slide 27 — § 20 · O Fechamento · Trabalhos futuros<span class="tempo">≈ 50 s</span></h2>
+<p>A pesquisa abre continuidade em duas frentes. <span class="pausa">[ pausa ]</span></p>
+<p>Na frente funcional, entre as evoluções do sistema estão: o Sistema SAC como complemento ao Price, o cálculo integral do Custo Efetivo Total incluindo tarifas, seguros e IOF, gráficos históricos de evolução das taxas, a ampliação para pessoa jurídica e uma área autenticada, que foi diretamente sugerida pelos usuários no campo aberto do questionário. <span class="pausa">[ pausa ]</span></p>
+<p>Na frente científica, entre as evoluções da pesquisa estão: uma avaliação com amostra maior utilizando o instrumento SUS, testes com medidas objetivas de desempenho, a validação do espelhamento com usuários reais e, principalmente, um estudo longitudinal ou experimental para verificar o impacto do sistema em decisões efetivas de crédito.</p>
+</section>
+<section class="slide">
+<h2>Slide 28 — § 21 · O Fechamento · Considerações finais<span class="tempo">≈ 1 min</span></h2>
+<p>Como consideração final, este trabalho demonstrou que a transformação de dados abertos governamentais em informação acessível é tecnicamente viável e possui potencial para apoiar decisões de crédito mais informadas. <span class="pausa">[ pausa ]</span></p>
+<p>Embora as informações sobre taxas de juros estejam disponíveis publicamente, sua apresentação em formato técnico dificulta a utilização pelo cidadão comum. O TaxaJurosPro reduz essa barreira ao reunir consulta, comparação e simulação em uma única plataforma, utilizando exclusivamente dados oficiais do Banco Central. <span class="pausa">[ pausa ]</span></p>
+<p>Retomando os pilares da pesquisa: a pergunta foi respondida dentro do enquadramento de Design Science; os seis objetivos específicos foram atingidos, com o sistema em produção; e as limitações foram recortes deliberados, com continuidade já planejada. <span class="pausa">[ pausa ]</span></p>
+<p>Considero, portanto, que os objetivos definidos no início foram atingidos e que o TaxaJurosPro representa uma aplicação prática dos conhecimentos adquiridos ao longo da graduação, unindo Engenharia de Software, Desenvolvimento Web e Educação Financeira para resolver um problema real.</p>
+</section>
+<section class="slide">
+<h2>Slide 29 — Obrigado<span class="tempo">≈ 20 s</span></h2>
+<p>Com isso, encerro a apresentação. <span class="pausa">[ pausa ]</span></p>
+<p>Agradeço mais uma vez à banca pela atenção e fico à disposição para as arguições e para responder às perguntas dos senhores. <span class="pausa">[ pausa ]</span></p>
+<p>Obrigado.</p>
+</section>
+<script>
+window.addEventListener('load', function () {
+  var el = document.documentElement;
+  var w = Math.ceil(el.scrollWidth);
+  var h = Math.ceil(el.scrollHeight) + 2;
+  var s = document.createElement('style');
+  s.textContent = '@page { size: ' + w + 'px ' + h + 'px; margin: 0; }';
+  document.head.appendChild(s);
+});
+</script>
+</body>
+</html>
